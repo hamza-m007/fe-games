@@ -5,7 +5,7 @@ import React from "react";
 export default function Header () {
     return (
         <header>
-            <hi>{'Game Board Reviews'}</hi>
+            <h1>{'Game Board Reviews'}</h1>
         </header>
     );
 }
