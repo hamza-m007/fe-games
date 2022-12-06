@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getReviews } from "../utils/api";
 
 export default function ReviewList() {
@@ -26,7 +27,9 @@ export default function ReviewList() {
                         return (
                             <li className="Review-card" key={review.review_id}>
                                 <img src={review.review_img_url} alt={review.title}></img>
-                                <h4>{review.title}</h4>
+                                <Link to={`/reviews/${review.review_id}`}>
+                                    <h4>{review.title}</h4> 
+                                </Link>
                                 <p>{review.category}</p>
                                 <p>{review.owner}</p>
                                 <p>{review.created_at.slice(0, 10)}</p>

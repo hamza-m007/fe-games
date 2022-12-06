@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom"
 import Header from './components/Header';
 import Nav from './components/Nav';
 import ReviewList from './components/ReviewList';
+import Review from './components/Review';
+
 
 
 function App() {
@@ -13,10 +15,11 @@ function App() {
     <div className="App">
       <Nav />
       <Header />
-      <ReviewList />
-      {/* <Routes>
-        <route path="/" element={<ReviewList />} />
-      </Routes> */}
+      {/* <ReviewList /> */}
+      <Routes>
+        <Route path="/" element={<ReviewList />} />
+        <Route path="/reviews/:review_id" element={<Review/>} />
+      </Routes>
     </div>
   );
 }
