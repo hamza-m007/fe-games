@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Header () {
     return (
-        <header>
+        <header id="Header">
             <h1>{'Game Board Reviews'}</h1>
         </header>
     );
