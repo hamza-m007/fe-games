@@ -14,7 +14,7 @@ export default function Review() {
             setReview(reviewFromApi)
             setIsLoading(false)
         });
-    }, [review_id]);
+    }, []);
 
     return (
         <main>
