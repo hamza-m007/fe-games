@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../utils/api";
+import Comments from "./Comments";
 
 export default function Review() {
     const [review, setReview] = useState([])
@@ -22,7 +23,7 @@ export default function Review() {
                 <h3 id="loading">Loading ...</h3>
             ) : (
                 <section className="Review-id">
-                     <h2>{review.title}</h2>
+                     <h3>{review.title}</h3>
                      <img src={review.review_img_url} alt={review.title}></img>
                      <p>{review.category}</p>
                      <br />
@@ -30,6 +31,8 @@ export default function Review() {
                      <p>Owner: {review.owner}</p>
                      <p>Created at: {review.created_at}</p>
                      <p>Votes: {review.votes}</p>
+                     <br />
+                     <Comments />
                 </section>
             )}
         </main>
