@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../utils/api";
 import Comments from "./Comments";
+import ReviewVote from "./ReviewVote";
 
 export default function Review() {
     const [review, setReview] = useState([])
@@ -24,13 +25,14 @@ export default function Review() {
             ) : (
                 <section className="Review-id">
                      <h3>{review.title}</h3>
-                     <img src={review.review_img_url} alt={review.title}></img>
-                     <p>{review.category}</p>
+                     <img src={review.review_img_url} alt={review.title} />
+                     <p>Category: {review.category}</p>
                      <br />
                      <p>{review.review_body}</p>
                      <p>Owner: {review.owner}</p>
                      <p>Created at: {review.created_at}</p>
-                     <p>Votes: {review.votes}</p>
+                    <ReviewVote review={review}/>
+
                      <br />
                      <Comments />
                 </section>

@@ -20,6 +20,9 @@ export default function Comments() {
         <main>
             <section className="comments">
             <h2>Comments</h2>
+                        {comments.length === 0 ? (
+                            <p>No comments for this review yet</p>
+                        ) : (
                      <ul className="Comments-list">
                         {comments.map((comment) => {
                             return (
@@ -32,6 +35,7 @@ export default function Comments() {
                             )
                         })}
                      </ul>
+                        )}
             </section>
         </main>
     )
