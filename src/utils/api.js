@@ -21,3 +21,10 @@ export const getCommentsByReviewId = (review_id) => {
         return res.data.comments
     })
 }
+
+export const patchReview = (review_id, inc_votes) => {
+    const patchBody = {inc_votes: inc_votes}
+    return gameReviews.patch(`/reviews/${review_id}`, patchBody).then((res) => {
+        return res.data.review
+    })
+}

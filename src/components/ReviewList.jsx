@@ -16,6 +16,8 @@ export default function ReviewList() {
         }, 0);
     }, [])
 
+
+
     return (
         <main>
             <h2>Review List</h2>
@@ -30,9 +32,10 @@ export default function ReviewList() {
                                 <Link to={`/reviews/${review.review_id}`}>
                                     <h4>{review.title}</h4> 
                                 </Link>
-                                <p>{review.category}</p>
-                                <p>{review.owner}</p>
-                                <p>{review.created_at.slice(0, 10)}</p>
+                                <p>Category: {review.category}</p>
+                                <p>Owner: {review.owner}</p>
+                                <p>Created at: {review.created_at.slice(0, 10)}</p>
+                                <p>Votes: {review.votes}</p>
                             </li>
                         )
                     })}
